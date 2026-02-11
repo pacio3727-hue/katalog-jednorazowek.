@@ -300,21 +300,13 @@ footer{
 <img src="model12.jpg" alt="WGA Crystal Plus" loading="lazy">
 <div class="content">
 <h3>WGA Crystal Plus</h3>
-<div class="meta">20000 puff • 5% • 3 smaki</div>
+<div class="meta">20000 puff • 5% • 2 smaki</div>
 <ul>
-<li>Watermelon Ice / Strawberry Red Bull / Strawberry Kiwi</li>
-<li>Strawberry Watermelon / Blueberry on Ice / Kiwi Lemon</li>
-<li>Mixed Berries / Peach Apple Ice / Lady Killer</li>
-<li>Mango Ice / Banana Ice / Blue Razz Lemonade</li>
-<li>Peach Mango Pineapple / Strawberry Raspberry Ice / Triple Mango</li>
-<li>Strawberry Grape / Peach Mango / Ice Pop</li>
-<li>Strawberry Ice / Sour Apple / Blueberry Raspberry</li>
-<li>Grape Ice / Cherry Ice / Blue Sour Raspberry</li>
-<li>Peach Ice / Red Apple / Blueberry Cherry Cranberry</li>
-<li>Kiwi Passion Fruit Guava / Green Apple / Juicy Peach</li>
-</ul>
-</div>
-</div>
+<li>Blue Razz Gummy / Blue Raspberry</li>
+<li>Strawberry Raspberry Ice / Blueberry Cherry Cranberry</li>
+<li>Lemon Lime / Lemonade Sherbet Ice</li>
+<li>Blueberry Ice / Strawberry Ice</li>
+<li>Blue Razz
 
 </section>
 
