@@ -39,7 +39,7 @@ footer{text-align:center;font-size:12px;color:#777;padding:15px;border-top:1px s
 
 <!-- MODEL 1 -->
 <div class="card">
-<img src="https://bestevape.com/wp-content/uploads/2025/10/2-merry-mi-blade-30000-vape-diposable-wegwerp-vape-e-cigarette-puff-jetable-france-nederland-belgie-goedkoop.jpg" alt="Merryblade" width="89" loading="lazy">
+<img src="https://bestevape.com/wp-content/uploads/2025/10/2-merry-mi-blade-30000-vape-diposable-wegwerp-vape-e-cigarette-puff-jetable-france-nederland-belgie-goedkoop.jpg" alt="Merryblade"  loading="lazy">
 <div class="content">
 <h3>Merryblade</h3>
 <div class="meta">30000 puff • 5% • regulacja mocy 10–26W</div>
@@ -314,7 +314,7 @@ footer{text-align:center;font-size:12px;color:#777;padding:15px;border-top:1px s
 <script>
 function acceptAge(){
   localStorage.setItem("ageAccepted","yes");
-  document.getElementById("ageOverlay").style.display = "none"; // natychmiast ukryj overlay
+  document.getElementById("ageOverlay").style.display = "none";
 }
 if(localStorage.getItem("ageAccepted") === "yes"){
   document.getElementById("ageOverlay").style.display = "none";
