@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Katalog Jednorazówek</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -246,7 +245,7 @@
       transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
       display:flex;
       flex-direction:column;
-      min-height: 420px;
+      min-height: 430px;
     }
     .card:hover{
       transform: translateY(-4px);
@@ -269,7 +268,7 @@
       transform: scale(1.02);
     }
 
-    /* ✅ ULEPSZENIE: mocniejszy gradient pod badge'ami */
+    /* Stronger gradient under badges */
     .thumb::after{
       content:"";
       position:absolute;
@@ -279,7 +278,6 @@
       pointer-events:none;
     }
 
-    /* ✅ ULEPSZENIE: czytelniejszy pasek badge'y */
     .badgeRow{
       position:absolute;
       left: 12px;
@@ -291,8 +289,6 @@
       align-items:center;
       z-index: 2;
     }
-
-    /* ✅ ULEPSZENIE: badge bardziej "kontrastowe" */
     .badge{
       font-size: 12px;
       font-weight: 900;
@@ -306,8 +302,6 @@
       box-shadow: 0 10px 22px rgba(0,0,0,.55);
       backdrop-filter: blur(10px);
     }
-
-    /* ✅ ULEPSZENIE: badge puff (accent) jeszcze mocniejszy */
     .badge.accent{
       border-color: rgba(0,247,255,.55);
       background: linear-gradient(135deg, rgba(0,247,255,.35), rgba(124,92,255,.22));
@@ -359,6 +353,7 @@
       justify-content:space-between;
       gap:10px;
       background: rgba(0,0,0,.12);
+      flex-wrap:wrap;
     }
     .small{
       font-size: 12px;
@@ -372,6 +367,38 @@
       background: rgba(255,255,255,.05);
       padding: 7px 10px;
       border-radius: 999px;
+      white-space:nowrap;
+    }
+
+    /* PRICE BOX */
+    .priceBox{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .qtySelect{
+      background: rgba(255,255,255,.05);
+      border:1px solid var(--border);
+      color: var(--text);
+      padding:6px 8px;
+      border-radius:10px;
+      font-size:12px;
+      font-weight:700;
+      cursor:pointer;
+      outline:none;
+    }
+    .price{
+      font-size: 13px;
+      font-weight: 900;
+      color: #00f7ff;
+      text-shadow: 0 0 10px rgba(0,247,255,.35);
+      white-space:nowrap;
+    }
+    .total{
+      font-size: 12px;
+      color: rgba(234,234,242,.8);
+      white-space:nowrap;
     }
 
     footer.site{
@@ -382,14 +409,13 @@
       text-align:center;
     }
 
-    /* helper */
     .hidden{ display:none !important; }
 
-    /* Mobile tweaks */
     @media (max-width: 560px){
       .input{ min-width: 100%; }
       .thumb{ height: 205px; }
-      .card{ min-height: 400px; }
+      .card{ min-height: 410px; }
+      .footerCard{ justify-content:flex-start; }
     }
   </style>
 </head>
@@ -455,12 +481,17 @@
     </div>
   </header>
 
-  <!-- Main -->
   <main class="wrap">
     <section class="products" id="products">
 
+      <!-- ✅ CENY ZMIENIASZ TYLKO TUTAJ: data-price-1 / 3 / 5 / 10 -->
+
       <!-- MODEL 1 -->
-      <article class="card" data-model="Merryblade" data-meta="30000 puff • 5% • regulacja mocy 10–26W" data-tags="strawberry kiwi aloe blackcurrant ice peach raspberry cherry mixed berries energy dragon fruit lime honey apple grape fizzy blueberry grapefruit aperol candy vimto lemon mojito jager orange melon dr pepper forest">
+      <article class="card"
+        data-model="Merryblade"
+        data-price-1="90" data-price-3="80" data-price-5="70" data-price-10="60"
+        data-meta="30000 puff • 5% • regulacja mocy 10–26W"
+        data-tags="strawberry kiwi aloe blackcurrant ice peach raspberry cherry mixed berries energy dragon fruit lime honey apple grape fizzy blueberry grapefruit aperol candy vimto lemon mojito jager orange melon dr pepper forest">
         <div class="thumb">
           <img src="https://bestevape.com/wp-content/uploads/2025/10/2-merry-mi-blade-30000-vape-diposable-wegwerp-vape-e-cigarette-puff-jetable-france-nederland-belgie-goedkoop.jpg" alt="Merryblade" loading="lazy">
           <div class="badgeRow">
@@ -489,12 +520,26 @@
         </div>
         <div class="footerCard">
           <span class="small">Model: Merryblade</span>
+          <div class="priceBox">
+            <select class="qtySelect" aria-label="Wybierz ilość">
+              <option value="1">1 szt</option>
+              <option value="3">3 szt</option>
+              <option value="5">5 szt</option>
+              <option value="10">10 szt</option>
+            </select>
+            <span class="price"></span>
+            <span class="total"></span>
+          </div>
           <span class="count"></span>
         </div>
       </article>
 
       <!-- MODEL 2 -->
-      <article class="card" data-model="ETS Dual Galaxy" data-meta="30000 puff • 5% • dual flavor" data-tags="peach apple mint blueberry raspberry strawberry watermelon passion cherry lemon lime aloe grape black mr razz cola skittles guava">
+      <article class="card"
+        data-model="ETS Dual Galaxy"
+        data-price-1="90" data-price-3="80" data-price-5="70" data-price-10="60"
+        data-meta="30000 puff • 5% • dual flavor"
+        data-tags="peach apple mint blueberry raspberry strawberry watermelon passion cherry lemon lime aloe grape black mr razz cola skittles guava">
         <div class="thumb">
           <img src="https://wapujemy.com/wp-content/uploads/2025/04/wersja-2.png" alt="ETS Dual Galaxy" loading="lazy">
           <div class="badgeRow">
@@ -526,12 +571,26 @@
         </div>
         <div class="footerCard">
           <span class="small">Model: ETS Dual Galaxy</span>
+          <div class="priceBox">
+            <select class="qtySelect" aria-label="Wybierz ilość">
+              <option value="1">1 szt</option>
+              <option value="3">3 szt</option>
+              <option value="5">5 szt</option>
+              <option value="10">10 szt</option>
+            </select>
+            <span class="price"></span>
+            <span class="total"></span>
+          </div>
           <span class="count"></span>
         </div>
       </article>
 
       <!-- MODEL 3 -->
-      <article class="card" data-model="MerryMi M-Mecha" data-meta="16000 puff • 3%" data-tags="watermelon strawberry kiwi peach cherry cactus lychee razz apple grape cola dragon fruit berries energy orange pineapple mojito mint blueberry vimto fanta lemon needle cranberry">
+      <article class="card"
+        data-model="MerryMi M-Mecha"
+        data-price-1="80" data-price-3="75" data-price-5="70" data-price-10="60"
+        data-meta="16000 puff • 3%"
+        data-tags="watermelon strawberry kiwi peach cherry cactus lychee razz apple grape cola dragon fruit berries energy orange pineapple mojito mint blueberry vimto fanta lemon needle cranberry">
         <div class="thumb">
           <img src="https://vape444.com/cdn/shop/files/Merry-Mi-M-Mecha-16K-black-mint_022b8826-2473-47f8-a56b-e49df07b8579.jpg?v=1766859429" alt="MerryMi M-Mecha" loading="lazy">
           <div class="badgeRow">
@@ -559,12 +618,26 @@
         </div>
         <div class="footerCard">
           <span class="small">Model: MerryMi M-Mecha</span>
+          <div class="priceBox">
+            <select class="qtySelect" aria-label="Wybierz ilość">
+              <option value="1">1 szt</option>
+              <option value="3">3 szt</option>
+              <option value="5">5 szt</option>
+              <option value="10">10 szt</option>
+            </select>
+            <span class="price"></span>
+            <span class="total"></span>
+          </div>
           <span class="count"></span>
         </div>
       </article>
 
       <!-- MODEL 5 -->
-      <article class="card" data-model="MerryMi Mecha Pro" data-meta="35000 puff • 5%" data-tags="cactus peach berries summer watermelon razz energy blueberry cherry cranberry fanta vimto">
+      <article class="card"
+        data-model="MerryMi Mecha Pro"
+        data-price-1="90" data-price-3="80" data-price-5="70" data-price-10="65"
+        data-meta="35000 puff • 5%"
+        data-tags="cactus peach berries summer watermelon razz energy blueberry cherry cranberry fanta vimto">
         <div class="thumb">
           <img src="https://vapemvps.com/cdn/shop/files/merry-mi-mecha-pro-20k-puffs-fanta-vapemvps.jpg?v=1763392696" alt="MerryMi Mecha Pro" loading="lazy">
           <div class="badgeRow">
@@ -589,12 +662,26 @@
         </div>
         <div class="footerCard">
           <span class="small">Model: MerryMi Mecha Pro</span>
+          <div class="priceBox">
+            <select class="qtySelect" aria-label="Wybierz ilość">
+              <option value="1">1 szt</option>
+              <option value="3">3 szt</option>
+              <option value="5">5 szt</option>
+              <option value="10">10 szt</option>
+            </select>
+            <span class="price"></span>
+            <span class="total"></span>
+          </div>
           <span class="count"></span>
         </div>
       </article>
 
       <!-- MODEL 6 -->
-      <article class="card" data-model="Airmez Fox 4in1" data-meta="120000 puff • 2% • 4 smaki" data-tags="strawberry raspberry kiwi ice peach mango watermelon pink lemonade passion mixed berries triple love cherry blueberry guava tropical lemon mojito grape dragonfruit energy">
+      <article class="card"
+        data-model="Airmez Fox 4in1"
+        data-price-1="80" data-price-3="75" data-price-5="70" data-price-10="60"
+        data-meta="120000 puff • 2% • 4 smaki"
+        data-tags="strawberry raspberry kiwi ice peach mango watermelon pink lemonade passion mixed berries triple love cherry blueberry guava tropical lemon mojito grape dragonfruit energy">
         <div class="thumb">
           <img src="https://www.vapeandoando.com/cdn/shop/files/Airmez-Fox-3.jpg?v=1764637798" alt="Airmez Fox 4in1" loading="lazy">
           <div class="badgeRow">
@@ -621,12 +708,26 @@
         </div>
         <div class="footerCard">
           <span class="small">Model: Airmez Fox 4in1</span>
+          <div class="priceBox">
+            <select class="qtySelect" aria-label="Wybierz ilość">
+              <option value="1">1 szt</option>
+              <option value="3">3 szt</option>
+              <option value="5">5 szt</option>
+              <option value="10">10 szt</option>
+            </select>
+            <span class="price"></span>
+            <span class="total"></span>
+          </div>
           <span class="count"></span>
         </div>
       </article>
 
       <!-- MODEL 7 -->
-      <article class="card" data-model="Tornado" data-meta="15000 puff • 5% / 2%" data-tags="kiwi passion fruit guava grape ice blueberry dragon mixed berry razz lemonade">
+      <article class="card"
+        data-model="Tornado"
+        data-price-1="70" data-price-3="65" data-price-5="60" data-price-10="50"
+        data-meta="15000 puff • 5% / 2%"
+        data-tags="kiwi passion fruit guava grape ice blueberry dragon mixed berry razz lemonade">
         <div class="thumb">
           <img src="https://www.randmvape-shop.net/cdn/shop/files/RandMTornado15000.png?v=1748017766&width=1080" alt="Tornado" loading="lazy">
           <div class="badgeRow">
@@ -648,12 +749,26 @@
         </div>
         <div class="footerCard">
           <span class="small">Model: Tornado</span>
+          <div class="priceBox">
+            <select class="qtySelect" aria-label="Wybierz ilość">
+              <option value="1">1 szt</option>
+              <option value="3">3 szt</option>
+              <option value="5">5 szt</option>
+              <option value="10">10 szt</option>
+            </select>
+            <span class="price"></span>
+            <span class="total"></span>
+          </div>
           <span class="count"></span>
         </div>
       </article>
 
       <!-- MODEL 8 -->
-      <article class="card" data-model="Fumot Tornado" data-meta="20000 puff • 5%" data-tags="blueberry raspberry hard candy strawberry kiwi peach pineapple orange skittles pear cotton jelly beans huckleberry watermelon mixed berry lychee melon cherry apple gummy bear mint cactus grape cola lemon blackcurrant mango grapefruit">
+      <article class="card"
+        data-model="Fumot Tornado"
+        data-price-1="90" data-price-3="80" data-price-5="75" data-price-10="70"
+        data-meta="20000 puff • 5%"
+        data-tags="blueberry raspberry hard candy strawberry kiwi peach pineapple orange skittles pear cotton jelly beans huckleberry watermelon mixed berry lychee melon cherry apple gummy bear mint cactus grape cola lemon blackcurrant mango grapefruit">
         <div class="thumb">
           <img src="https://static.24hvape.com/wp-content/uploads/2025/06/13121252/24h-vape-fumot-tornado-20000-20k-puffs-mixed-berry-654x690.jpg.webp" alt="Fumot Tornado" loading="lazy">
           <div class="badgeRow">
@@ -704,12 +819,26 @@
         </div>
         <div class="footerCard">
           <span class="small">Model: Fumot Tornado</span>
+          <div class="priceBox">
+            <select class="qtySelect" aria-label="Wybierz ilość">
+              <option value="1">1 szt</option>
+              <option value="3">3 szt</option>
+              <option value="5">5 szt</option>
+              <option value="10">10 szt</option>
+            </select>
+            <span class="price"></span>
+            <span class="total"></span>
+          </div>
           <span class="count"></span>
         </div>
       </article>
 
       <!-- MODEL 9 -->
-      <article class="card" data-model="Fumot Digital Monkey" data-meta="40000 puff • 5%" data-tags="banana strawberry watermelon blueberry raspberry black gummy ice peach pink lemonade mango grape lemon tropical rainbow cherry apple mint">
+      <article class="card"
+        data-model="Fumot Digital Monkey"
+        data-price-1="100" data-price-3="90" data-price-5="80" data-price-10="70"
+        data-meta="40000 puff • 5%"
+        data-tags="banana strawberry watermelon blueberry raspberry black gummy ice peach pink lemonade mango grape lemon tropical rainbow cherry apple mint">
         <div class="thumb">
           <img src="https://wezbucha.org/wp-content/uploads/2025/09/mon3.jpeg" alt="Fumot Digital Monkey" loading="lazy">
           <div class="badgeRow">
@@ -740,12 +869,26 @@
         </div>
         <div class="footerCard">
           <span class="small">Model: Fumot Digital Monkey</span>
+          <div class="priceBox">
+            <select class="qtySelect" aria-label="Wybierz ilość">
+              <option value="1">1 szt</option>
+              <option value="3">3 szt</option>
+              <option value="5">5 szt</option>
+              <option value="10">10 szt</option>
+            </select>
+            <span class="price"></span>
+            <span class="total"></span>
+          </div>
           <span class="count"></span>
         </div>
       </article>
 
       <!-- MODEL 10 -->
-      <article class="card" data-model="Movkin Tycoon" data-meta="40000 puff • 5% • 3 tryby ICE & 3 tryby nikotyny" data-tags="watermelon strawberry blueberry blackberry mint raspberry peach lime mango pineapple razz apple cherry banana orange grape lemon">
+      <article class="card"
+        data-model="Movkin Tycoon"
+        data-price-1="90" data-price-3="85" data-price-5="75" data-price-10="65"
+        data-meta="40000 puff • 5% • 3 tryby ICE & 3 tryby nikotyny"
+        data-tags="watermelon strawberry blueberry blackberry mint raspberry peach lime mango pineapple razz apple cherry banana orange grape lemon">
         <div class="thumb">
           <img src="https://szfumotvape.com/wp-content/uploads/2025/10/fumot-vape-heating-cores.webp" alt="Movkin Tycoon" loading="lazy">
           <div class="badgeRow">
@@ -778,12 +921,26 @@
         </div>
         <div class="footerCard">
           <span class="small">Model: Movkin Tycoon</span>
+          <div class="priceBox">
+            <select class="qtySelect" aria-label="Wybierz ilość">
+              <option value="1">1 szt</option>
+              <option value="3">3 szt</option>
+              <option value="5">5 szt</option>
+              <option value="10">10 szt</option>
+            </select>
+            <span class="price"></span>
+            <span class="total"></span>
+          </div>
           <span class="count"></span>
         </div>
       </article>
 
       <!-- MODEL 11 -->
-      <article class="card" data-model="RandM Tornado 60k 3in1" data-meta="60000 puff • 5% • 3 smaki" data-tags="watermelon strawberry energy kiwi lemon mixed berries peach apple lady killer mango banana razz grape cherry sour">
+      <article class="card"
+        data-model="RandM Tornado 60k 3in1"
+        data-price-1="80" data-price-3="75" data-price-5="70" data-price-10="60"
+        data-meta="60000 puff • 5% • 3 smaki"
+        data-tags="watermelon strawberry energy kiwi lemon mixed berries peach apple lady killer mango banana razz grape cherry sour">
         <div class="thumb">
           <img src="https://www.deeppouch.com/wp-content/uploads/2026/01/RahdM-Tornado-3in1-60000-Puffs.webp" alt="RandM Tornado 60k 3in1" loading="lazy">
           <div class="badgeRow">
@@ -810,12 +967,26 @@
         </div>
         <div class="footerCard">
           <span class="small">Model: RandM Tornado 60k 3in1</span>
+          <div class="priceBox">
+            <select class="qtySelect" aria-label="Wybierz ilość">
+              <option value="1">1 szt</option>
+              <option value="3">3 szt</option>
+              <option value="5">5 szt</option>
+              <option value="10">10 szt</option>
+            </select>
+            <span class="price"></span>
+            <span class="total"></span>
+          </div>
           <span class="count"></span>
         </div>
       </article>
 
       <!-- MODEL 12 -->
-      <article class="card" data-model="WGA Crystal Plus" data-meta="20000 puff • 5% • 2 smaki" data-tags="blue razz gummy raspberry strawberry ice blueberry cherry cranberry lemon lime sherbet cola heisenberg pinkman watermelon mr pink ice cream banana orange">
+      <article class="card"
+        data-model="WGA Crystal Plus"
+        data-price-1="90" data-price-3="85" data-price-5="80" data-price-10="70"
+        data-meta="20000 puff • 5% • 2 smaki"
+        data-tags="blue razz gummy raspberry strawberry ice blueberry cherry cranberry lemon lime sherbet cola heisenberg pinkman watermelon mr pink ice cream banana orange">
         <div class="thumb">
           <img src="https://wezbucha.org/wp-content/uploads/2024/08/wga-crystal-plus-20000-vape_web-11_1024x1024.webp" alt="WGA Crystal Plus" loading="lazy">
           <div class="badgeRow">
@@ -842,6 +1013,16 @@
         </div>
         <div class="footerCard">
           <span class="small">Model: WGA Crystal Plus</span>
+          <div class="priceBox">
+            <select class="qtySelect" aria-label="Wybierz ilość">
+              <option value="1">1 szt</option>
+              <option value="3">3 szt</option>
+              <option value="5">5 szt</option>
+              <option value="10">10 szt</option>
+            </select>
+            <span class="price"></span>
+            <span class="total"></span>
+          </div>
           <span class="count"></span>
         </div>
       </article>
@@ -883,11 +1064,41 @@
       modelFilter.appendChild(opt);
     });
 
-    // Flavor count badges
+    // Flavor count + price init
     cards.forEach(card=>{
+      // flavors count
       const countEl = card.querySelector(".count");
       const list = card.querySelectorAll(".flavors li").length;
-      countEl.textContent = `${list} smaków`;
+      if(countEl) countEl.textContent = `${list} smaków`;
+
+      // price init
+      const select = card.querySelector(".qtySelect");
+      const priceEl = card.querySelector(".price");
+      const totalEl = card.querySelector(".total");
+
+      function updatePrice(){
+        if(!select || !priceEl) return;
+
+        const qty = Number(select.value);
+        const priceStr = card.dataset["price-" + qty];
+        const price = priceStr ? Number(priceStr) : NaN;
+
+        if(Number.isFinite(price)){
+          priceEl.textContent = `${price.toFixed(0)} zł / szt`;
+          if(totalEl){
+            const total = price * qty;
+            totalEl.textContent = `(${qty} × ${price.toFixed(0)} = ${total.toFixed(0)} zł)`;
+          }
+        }else{
+          priceEl.textContent = "Cena: —";
+          if(totalEl) totalEl.textContent = "";
+        }
+      }
+
+      if(select){
+        select.addEventListener("change", updatePrice);
+        updatePrice();
+      }
     });
 
     totalCount.textContent = cards.length;
